@@ -6,11 +6,6 @@ public abstract class Material {
 	private String editora;
 	private int ano;
 	
-	@Override
-	public String toString () {
-		return titulo;
-	}
-	
 	public String getTitulo () {
 		return titulo;
 	}

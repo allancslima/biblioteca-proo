@@ -9,17 +9,13 @@ public class Biblioteca {
 	private ArrayList<Locacao> locacoes = new ArrayList<>();
 	private HashMap<Material, Integer> mapMateriais = new HashMap<>();
 	
-	public ArrayList<Material> consultarMateriais () {
+	public ArrayList<Material> getMateriais () {
 		return materiais;
 	}
 	
-	public void adicionarMaterial (Material material, int quantidade) {
+	public void cadastrarMaterial (Material material, int quantidade) {
 		materiais.add(material);
 		mapMateriais.put(material, quantidade);
-	}
-	
-	public boolean removerMaterial (Material material) {
-		return materiais.remove(material);
 	}
 	
 	public void adicionarLocacao (Locacao locacao) throws Exception {
@@ -35,6 +31,8 @@ public class Biblioteca {
 	}
 	
 	public int getQuantidadeMaterial (Material material) {
+		if (mapMateriais.get(material) == null)
+			return 0;
 		return mapMateriais.get(material);
 	}
 }
